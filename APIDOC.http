@@ -1,0 +1,172 @@
+
+#_________________DOCTORS______________
+
+# get all Doctors list
+
+###
+GET http://127.0.0.1:8000/doctor/
+Accept: application/json
+
+
+# Insert new doctor data
+###
+POST http://127.0.0.1:8000/doctor/
+Content-Type: application/json
+
+{
+    "name" : "ibraham",
+    "specialization" :"other",
+    "fee" : 200,
+    "qualification" : "MD",
+    "email" : "IB@mail.com"
+}
+
+#Get Doctor details
+###
+GET http://127.0.0.1:8000/doctor/1/
+Accept: application/json
+
+
+# Update doctor data
+###
+PUT  http://127.0.0.1:8000/doctor/2/
+Content-Type: application/json
+
+{
+    "name" : "ibraham",
+    "specialization" :"other",
+    "fee" : 250,
+    "qualification" : "MD",
+    "email" : "IB@mail.com"
+}
+
+# Delete From Doctors list
+
+###
+DELETE  http://127.0.0.1:8000/doctor/2/
+Accept: application/json
+
+
+
+#___________V2 _______
+#-----------------------------------------------
+#_________________________________________________________
+#------------------------------------------------------
+
+# get all Doctors list  with basic authentication
+
+###
+GET http://127.0.0.1:8000/v2/doctor/
+Accept: application/json
+Authorization: Basic superuser:superuser 
+
+
+# Insert new doctor data
+###
+POST http://127.0.0.1:8000/v2/doctor/
+Content-Type: application/json
+
+    {
+        "name" : "chako",
+        "specialization" :"other",
+        "fee" : 200,
+        "qualification" : "MD,MS",
+        "email" : "IoioB@mail.com"
+    }
+
+
+#Get Doctor details
+###
+GET  http://127.0.0.1:8000/v2/doctor/1/
+Accept: application/json
+
+#API call for url post/Update
+###
+POST http://127.0.0.1:8000/v2/doctor/
+Content-Type: application/json
+
+  {
+    "name": "JAIN",
+    "specialization": "other",
+    "fee": -670,
+    "qualification": "MD",
+    "email": "J7@mail.com"
+  }
+
+
+  #___________staff V2 _______
+#-----------------------------------------------
+#__________________creating API user_______________________________________
+#------------------------------------------------------
+
+###
+POST http://127.0.0.1:8000/v2/admin-register/
+Content-Type: application/json
+
+{
+    "username":"adminuser",
+    "email":"adminuser@gmail.com",
+    "password":"adminuser"
+}
+
+
+#Geting user details
+###
+GET http://127.0.0.1:8000/v2/admin-register/
+Accept: application/json
+
+
+
+# appointments API call++++++++++++++++++++++++++++++++++++++++
+
+###
+GET http://127.0.0.1:8000/appointments/
+Accept: application/json
+
+#api call for book an appointment==========================
+
+###
+POST http://127.0.0.1:8000/appointments/
+Content-Type: application/json
+
+{
+    "patient_name":"tom",
+    "phone": 567856,
+    "doctor":1,
+    "appointment_date":"2026-10-07",
+    "problem":"sneezing"
+}
+
+
+
+#________________________________________________________________
+#________________Booking V2 __________________
+#__________________________________________________
+
+###
+POST http://127.0.0.1:8000/v2/bookings/signup/
+Content-Type: application/json
+
+{
+    "username":"user3",
+    "email":"user3@gmail.com",
+    "password":"Password3@123"
+}
+
+#________________get appoinment in booking2___________
+###
+GET http://127.0.0.1:8000/v2/bookings/appointments/
+Accept: application/json
+
+#post appointment in  booking v2 _____________________
+###
+POST http://127.0.0.1:8000/v2/bookings/appointments/
+Content-Type: application/json
+
+{
+    "patient_name":"24ob",
+    "phone": 567856,
+    "doctor":1,
+    "appointment_date":"2026-10-17",
+    "problem":"Fever"
+}
