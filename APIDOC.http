@@ -162,11 +162,19 @@ Accept: application/json
 ###
 POST http://127.0.0.1:8000/v2/bookings/appointments/
 Content-Type: application/json
+Authorization: Basic adminuser:adminuser
 
 {
-    "patient_name":"24ob",
+    "patient_name":"ssob",
     "phone": 567856,
     "doctor":1,
     "appointment_date":"2026-10-17",
     "problem":"Fever"
 }
+
+
+#api cal for retrieve
+###
+GET http://127.0.0.1:8000/v2/bookings/appointments/1/
+Accept: application/json
+Authorization: Basic adminuser:adminuser      
